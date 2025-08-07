@@ -4,55 +4,78 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>연습문제2</title>
+  <title>연습문제 3번</title>
   <style>
-    .container {
-      width: 560px;
-      border: 1px solid black;
-      padding: 20px 40px;
+    #order {
+      width: 1000px;
+      margin: 0 auto;
     }
-    .detail {
-      margin: 4px 40px;
+    label {
+      display: inline-block;
+      width: 100px;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 300px;
+      height: 24px;
+      margin-bottom: 10px;
+    }
+    input[type="date"] {
+      width: 150px;
+    }
+    button {
+      width: 150px;
+      height: 40px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .btn {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    span {
+      font-size: 80%;
     }
   </style>
 </head>
 <body>
-  <!-- 바깥 틀을 만들기 위해 div 태그 넣기 (style은 class 정의)-->
-  <!-- 기본 여백들이 있어서 스타일 날리고 해보자 -->
-  <div class="container">
-    <h1>프론트앤드 개발자 지원서</h1>
-    <p>HTML, CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
-    <hr>
+  <div id="order">
+    <h1>아이패드 주문하기</h1>
     <form action="#">
-      <h4>개인정보</h4>
-      <div class="detail">
-        <label for="name">이름</label>
-        <input type="text" id="name" placeholder="공백없이 입력하세요.">
+      <fieldset>
+        <legend>배송 정보</legend>
+        <div>
+          <label for="product">주문 상품</label>
+          <input type="text" id="product" value="아이패드 12.9인치" readonly>
+        </div>
+        <div>
+          <label for="name">이름</label>
+          <input type="text" id="name" autofocus>
+        </div>
+        <div>
+          <label for="address">배송 주소</label>
+          <input type="text" id="address" required>
+        </div>
+        <div>
+          <label for="mail">이메일</label>
+          <input type="text" id="mail">
+        </div>
+        <div>
+          <label for="tel">연락처</label>
+          <input type="text" id="tel" placeholder="하이픈 빼고 입력해 주세요.(01012345678)">
+        </div>
+        <div>
+          <label for="date">배송일 지정</label>
+          <input type="date" id="date">
+          <span>(주문일로부터 최소 3일 이후)</span>
+        </div>
+      </fieldset>
+      <div class="btn">
+        <button type="submit">주문하기</button>
+        <button type="submit">취소하기</button>
       </div>
-      <div class="detail">
-        <label for="tel">연락처</label>
-        <input type="text" id="tel">
-      </div>
-      <h4>지원분야</h4>
-      <div class="detail">
-        <input type="radio" name="field" id="publish" value="1">
-        <label for="publish">웹퍼블리싱</label>
-      </div>
-      <div class="detail">
-        <input type="radio" name="field" id="front" value="2">
-        <label for="front">프론트앤드</label>
-      </div>
-      <div class="detail">
-        <input type="radio" name="field" id="mobile" value="3">
-        <label for="mobile">모바일앱</label>
-      </div>
-      <h4>지원동기</h4>
-      <textarea name="desc" id="" cols="70" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요.">
-      </textarea>
-      <button type="submit">접수하기</button>
-      <button type="reset">다시쓰기</button>
     </form>
-    
   </div>
 </body>
 </html>
